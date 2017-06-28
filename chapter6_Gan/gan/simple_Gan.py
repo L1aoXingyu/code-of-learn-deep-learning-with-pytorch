@@ -1,12 +1,15 @@
-__author__ = 'ShelockLiao'
-
 import torch
+import torchvision
 import torch.nn as nn
-from torch.autograd import Variable
-from torch.utils.data import DataLoader
-from torchvision import transforms
+import torch.nn.functional as F
 from torchvision import datasets
+from torchvision import transforms
 from torchvision.utils import save_image
+from torch.autograd import Variable
+import os
+
+if not os.path.exists('./img'):
+    os.mkdir('./img')
 
 
 def to_img(x):
@@ -18,95 +21,76 @@ def to_img(x):
 
 batch_size = 128
 num_epoch = 100
-z_dimension = 100  # noise dimension
+z_dimension = 100
 
+# Image processing
 img_transform = transforms.Compose([
-    transforms.ToTensor(),
-    transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-])
+                transforms.ToTensor(),
+                transforms.Normalize(mean=(0.5, 0.5, 0.5),
+                                     std=(0.5, 0.5, 0.5))])
+# MNIST dataset
+mnist = datasets.MNIST(root='./data/',
+                       train=True,
+                       transform=img_transform,
+                       download=True)
+# Data loader
+dataloader = torch.utils.data.DataLoader(dataset=mnist,
+                                         batch_size=batch_size,
+                                         shuffle=True)
 
-mnist = datasets.MNIST('./data', transform=img_transform)
-dataloader = DataLoader(mnist, batch_size=batch_size, shuffle=True,
-                        num_workers=4)
 
-
+# Discriminator
 class discriminator(nn.Module):
     def __init__(self):
         super(discriminator, self).__init__()
-        self.conv1 = nn.Sequential(
-            nn.Conv2d(1, 32, 5, padding=2),  # batch, 32, 28, 28
-            nn.LeakyReLU(0.2, True),
-            nn.AvgPool2d(2, stride=2),  # batch, 32, 14, 14
-            )
-        self.conv2 = nn.Sequential(
-            nn.Conv2d(32, 64, 5, padding=2),  # batch, 64, 14, 14
-            nn.LeakyReLU(0.2, True),
-            nn.AvgPool2d(2, stride=2)  # batch, 64, 7, 7
-        )
-        self.fc = nn.Sequential(
-            nn.Linear(64*7*7, 1024),
-            nn.LeakyReLU(0.2, True),
-            nn.Linear(1024, 1),
+        self.dis = nn.Sequential(
+            nn.Linear(784, 256),
+            nn.LeakyReLU(0.2),
+            nn.Linear(256, 256),
+            nn.LeakyReLU(0.2),
+            nn.Linear(256, 1),
             nn.Sigmoid()
         )
 
     def forward(self, x):
-        '''
-        x: batch, width, height, channel=1
-        '''
-        x = self.conv1(x)
-        x = self.conv2(x)
-        x = x.view(x.size(0), -1)
-        x = self.fc(x)
+        x = self.dis(x)
         return x
 
 
+# Generator
 class generator(nn.Module):
-    def __init__(self, input_size, num_feature):
+    def __init__(self):
         super(generator, self).__init__()
-        self.fc = nn.Linear(input_size, num_feature)  # batch, 3136=1x56x56
-        self.br = nn.Sequential(
-            nn.BatchNorm2d(1),
-            nn.ReLU(True)
-        )
-        self.downsample1 = nn.Sequential(
-            nn.Conv2d(1, 50, 3, stride=1, padding=1),  # batch, 50, 56, 56
-            nn.BatchNorm2d(50),
-            nn.ReLU(True)
-        )
-        self.downsample2 = nn.Sequential(
-            nn.Conv2d(50, 25, 3, stride=1, padding=1),  # batch, 25, 56, 56
-            nn.BatchNorm2d(25),
-            nn.ReLU(True)
-        )
-        self.downsample3 = nn.Sequential(
-            nn.Conv2d(25, 1, 2, stride=2),  # batch, 1, 28, 28
+        self.gen = nn.Sequential(
+            nn.Linear(100, 256),
+            nn.ReLU(True),
+            nn.Linear(256, 256),
+            nn.ReLU(True),
+            nn.Linear(256, 784),
             nn.Tanh()
         )
 
     def forward(self, x):
-        x = self.fc(x)
-        x = x.view(x.size(0), 1, 56, 56)
-        x = self.br(x)
-        x = self.downsample1(x)
-        x = self.downsample2(x)
-        x = self.downsample3(x)
+        x = self.gen(x)
         return x
 
 
-D = discriminator().cuda()  # discriminator model
-G = generator(z_dimension, 3136).cuda()  # generator model
-
-criterion = nn.BCELoss()  # binary cross entropy
-
+D = discriminator()
+G = generator()
+if torch.cuda.is_available():
+    D = D.cuda()
+    G = G.cuda()
+# Binary cross entropy loss and optimizer
+criterion = nn.BCELoss()
 d_optimizer = torch.optim.Adam(D.parameters(), lr=0.0003)
 g_optimizer = torch.optim.Adam(G.parameters(), lr=0.0003)
 
-# train
+# Start training
 for epoch in range(num_epoch):
     for i, (img, _) in enumerate(dataloader):
         num_img = img.size(0)
         # =================train discriminator
+        img = img.view(num_img, -1)
         real_img = Variable(img).cuda()
         real_label = Variable(torch.ones(num_img)).cuda()
         fake_label = Variable(torch.zeros(num_img)).cuda()
@@ -148,10 +132,10 @@ for epoch in range(num_epoch):
                           real_scores.data.mean(), fake_scores.data.mean()))
     if epoch == 0:
         real_images = to_img(real_img.cpu().data)
-        save_image(real_images, './data/img/real_images.png')
+        save_image(real_images, './img/real_images.png')
 
     fake_images = to_img(fake_img.cpu().data)
-    save_image(fake_images, './data/img/fake_images-{}.png'.format(epoch+1))
+    save_image(fake_images, './img/fake_images-{}.png'.format(epoch+1))
 
 torch.save(G.state_dict(), './generator.pth')
 torch.save(D.state_dict(), './discriminator.pth')
