@@ -1,6 +1,9 @@
 import torch
 import numpy as np
 from torch.autograd import Variable
+from torch.utils.data import Dataset, DataLoader
+from torchvision.datasets import ImageFolder
+import pandas as pd
 
 # =============================Tensor================================
 # Define 3x2 matrix with given values
@@ -58,3 +61,40 @@ print(y)
 
 y.backward(torch.FloatTensor([1, 0.1, 0.01]))
 print(x.grad)
+
+
+# ==============================nn.Module=================================
+class net_name(nn.Module):
+    def __init__(self, other_arguments):
+        super(net_name, self).__init__()
+        self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size)
+        # other network layer
+
+    def forward(self, x):
+        x = self.conv1(x)
+        return x
+
+# ============================Dataset====================================
+
+
+class myDataset(Dataset):
+    def __init__(self, csv_file, txt_file, root_dir, other_file):
+        self.csv_data = pd.read_csv(csv_file)
+        with open(txt_file, 'r') as f:
+            data_list = f.readlines()
+        self.txt_data = data_list
+        self.root_dir = root_dir
+
+    def __len__(self):
+        return len(self.csv_data)
+
+    def __getitem__(self, idx):
+        data = (self.csv_data[idx], self.txt_data[idx])
+        return data
+
+
+dataiter = DataLoader(myDataset, batch_size=32, shuffle=True,
+                      collate_fn=default_collate)
+
+dset = ImageFolder(root='root_path', transform=None,
+                   loader=default_loader)
