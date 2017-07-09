@@ -23,16 +23,16 @@ def f(x):
 
 # plot function curve and fitting curve
 def plot_function(model):
-    x_data = make_features(torch.arange(-1, 1, 0.01))
+    x_data = make_features(torch.arange(-1, 1, 0.1))
     y_data = f(x_data)
     if torch.cuda.is_available():
         y_pred = model(Variable(x_data).cuda())
-    x = torch.arange(-1, 1, 0.01).numpy()
+    x = torch.arange(-1, 1, 0.1).numpy()
     y = y_data.numpy()
     y_p = y_pred.cpu().data.numpy()
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.plot(x, y, 'r', label='real curve')
+    plt.plot(x, y, 'ro', label='real curve')
     plt.plot(x, y_p, label='fitting curve')
     plt.legend(loc='best')
     plt.show()
@@ -94,6 +94,7 @@ while True:
     optimizer.step()
     epoch += 1
     if print_loss < 1e-3:
+        torch.save(model.state_dict(), './poly.pth')
         break
 
 print('Loss: {:.6f} after {} batches'.format(print_loss, epoch))
