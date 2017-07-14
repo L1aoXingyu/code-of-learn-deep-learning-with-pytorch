@@ -14,10 +14,9 @@ learning_rate = 1e-2
 num_epoches = 20
 
 # 数据预处理
-data_tf = transforms.Compose([
-    transforms.ToTensor(),
-    transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
-])
+data_tf = transforms.Compose(
+    [transforms.ToTensor(),
+     transforms.Normalize([0.5], [0.5])])
 # 下载训练集 MNIST 手写数字训练集
 train_dataset = datasets.MNIST(
     root='./data', train=True, transform=data_tf, download=True)
@@ -27,7 +26,7 @@ test_dataset = datasets.MNIST(root='./data', train=False, transform=data_tf)
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
-model = net.Batch_Net(28 * 28, 300, 100, 10)
+model = net.simpleNet(28 * 28, 300, 100, 10)
 if torch.cuda.is_available():
     model = model.cuda()
 
