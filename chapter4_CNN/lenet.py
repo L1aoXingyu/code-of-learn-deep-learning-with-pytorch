@@ -24,5 +24,6 @@ class Lenet(nn.Module):
     def forward(self, x):
         x = self.layer1(x)
         x = self.layer2(x)
+        x = x.view(x.size(0), -1)
         x = self.layer3(x)
         return x

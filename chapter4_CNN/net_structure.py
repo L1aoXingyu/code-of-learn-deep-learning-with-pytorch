@@ -49,11 +49,14 @@ new_model = nn.Sequential(*list(model.children())[:2])
 
 conv_model = nn.Sequential()
 for layer in model.named_modules():
-    if 'conv' in layer[0]:
+    if isinstance(layer[1], nn.Conv2d):
         conv_model.add_module(layer[0], layer[1])
 
-for param in model.named_parameters():
-    if 'conv' in param[0] and 'weight' in param[0]:
-        init.normal(param[1].data)
-        init.xavier_normal(param[1].data)
-        init.kaiming_normal(param[1].data)
+for m in model.modules():
+    if isinstance(m, nn.Conv2d):
+        init.normal(m.weight.data)
+        init.xavier_normal(m.weight.data)
+        init.kaiming_normal(m.weight.data)
+        m.bias.data.fill_(0)
+    elif isinstance(m, nn.Linear):
+        m.weight.data.normal_()
