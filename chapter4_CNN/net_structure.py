@@ -1,4 +1,5 @@
 import torch.nn as nn
+from torch.nn import init
 
 
 class SimpleCNN(nn.Module):
@@ -45,4 +46,14 @@ class SimpleCNN(nn.Module):
 model = SimpleCNN()
 
 new_model = nn.Sequential(*list(model.children())[:2])
-print(new_model)
+
+conv_model = nn.Sequential()
+for layer in model.named_modules():
+    if 'conv' in layer[0]:
+        conv_model.add_module(layer[0], layer[1])
+
+for param in model.named_parameters():
+    if 'conv' in param[0] and 'weight' in param[0]:
+        init.normal(param[1].data)
+        init.xavier_normal(param[1].data)
+        init.kaiming_normal(param[1].data)
