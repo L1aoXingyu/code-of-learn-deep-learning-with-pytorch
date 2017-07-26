@@ -20,7 +20,7 @@ print()
 input_size = lang_dataset.input_lang_words
 hidden_size = 256
 output_size = lang_dataset.output_lang_words
-total_epoch = 100
+total_epoch = 20
 
 encoder = EncoderRNN(input_size, hidden_size)
 decoder = DecoderRNN(hidden_size, output_size, n_layers=2)
@@ -43,13 +43,14 @@ def showPlot(points):
 def train(encoder, decoder, total_epoch, use_attn):
 
     param = list(encoder.parameters()) + list(decoder.parameters())
-    optimizer = optim.SGD(param, lr=1e-2)
+    optimizer = optim.Adam(param, lr=1e-2)
     criterion = nn.NLLLoss()
     plot_losses = []
     for epoch in range(total_epoch):
         since = time.time()
         running_loss = 0
         print_loss_total = 0
+        total_loss = 0
         for i, data in enumerate(lang_dataloader):
             in_lang, out_lang = data
             if torch.cuda.is_available():
@@ -104,6 +105,7 @@ def train(encoder, decoder, total_epoch, use_attn):
             optimizer.step()
             running_loss += loss.data[0]
             print_loss_total += loss.data[0]
+            total_loss += loss.data[0]
             if (i + 1) % 5000 == 0:
                 print('{}/{}, Loss:{:.6f}'.format(
                     i + 1, len(lang_dataloader), running_loss / 5000))
@@ -114,7 +116,7 @@ def train(encoder, decoder, total_epoch, use_attn):
                 print_loss_total = 0
         during = time.time() - since
         print('Finish {}/{} , Loss:{:.6f}, Time:{:.0f}s'.format(
-            epoch + 1, total_epoch, running_loss / len(lang_dataset), during))
+            epoch + 1, total_epoch, total_loss / len(lang_dataset), during))
         print()
     showPlot(plot_losses)
 
