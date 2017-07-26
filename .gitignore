@@ -2,5 +2,4 @@ __pycache__
 *.pth
 .ipynb_checkpoints
 img
-data
 chapter3_MLP/3_Neural_Network/.desktop
