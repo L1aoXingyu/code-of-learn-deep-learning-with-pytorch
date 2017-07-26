@@ -43,7 +43,7 @@ def showPlot(points):
 def train(encoder, decoder, total_epoch, use_attn):
 
     param = list(encoder.parameters()) + list(decoder.parameters())
-    optimizer = optim.Adam(param, lr=1e-2)
+    optimizer = optim.Adam(param, lr=1e-3)
     criterion = nn.NLLLoss()
     plot_losses = []
     for epoch in range(total_epoch):
