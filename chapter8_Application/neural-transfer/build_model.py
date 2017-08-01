@@ -1,10 +1,12 @@
+import torch
 import torch.nn as nn
 import torchvision.models as models
 
 import loss
 
 vgg = models.vgg19(pretrained=True).features
-vgg = vgg.cuda()
+if torch.cuda.is_available():
+    vgg = vgg.cuda()
 
 content_layers_default = ['conv_4']
 style_layers_default = ['conv_1', 'conv_2', 'conv_3', 'conv_4', 'conv_5']
@@ -22,9 +24,11 @@ def get_style_model_and_loss(style_img,
     style_loss_list = []
 
     model = nn.Sequential()
-    model = model.cuda()
+    if torch.cuda.is_available():
+        model = model.cuda()
     gram = loss.Gram()
-    gram = gram.cuda()
+    if torch.cuda.is_available():
+        gram = gram.cuda()
 
     i = 1
     for layer in cnn:
