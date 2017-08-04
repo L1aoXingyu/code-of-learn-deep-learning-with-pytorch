@@ -1,9 +1,9 @@
-import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import torch
 from torch import nn, optim
 from torch.autograd import Variable
-import numpy as np
 
 np.random.seed(2017)
 # load data
