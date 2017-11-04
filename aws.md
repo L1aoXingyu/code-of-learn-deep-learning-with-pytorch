@@ -10,13 +10,14 @@
 
 然后我们进入到控制面板，可以看到下面的图片，点击"EC2"
 
-![1](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/1.png)
-
+![1.png](http://upload-images.jianshu.io/upload_images/3623720-431f9b7b52bbbb20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 然后我们就能够进入到下一个界面
 
-![2](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/2.png)
+
+![2.png](http://upload-images.jianshu.io/upload_images/3623720-0fca7afcf3c0508e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 这个界面只需要注意三个地方，一个是右上角的地区，需要选择一个离你比较近的地区，整个亚太地区可以选择韩国，日本，新加坡和孟买。然后是左边的一个方框"限制"，如果你申请CPU的计算实例，那么不用管，如果你要申请GPU计算实例，就需要点击"限制"进行申请，因为GPU实例会产生费用，亚马逊需要和你确认这个事情，一般需要两到三个工作日。
 
@@ -26,7 +27,9 @@
 
 ### 申请实例并启动
 
-![3](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/3.png)
+
+![3.png](http://upload-images.jianshu.io/upload_images/3623720-bcaa9e8aad06af58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 进入上面的界面之后，需要选择操作系统，这里我们一般都选择linux系统，当然还有很多社区AMI，也就是别人配置好的系统，这里先暂时不用管，我们一般就在上面两个红框中选择一个，第一个是一个空的系统，什么都没有，第二个是一个深度学习的系统，装好了CUDA以及很多框架，可以选择这一个，如果选择这个，那么需要的磁盘空间可能更大。
 
@@ -34,15 +37,18 @@
 
 点击选择之后便可以进入下面的界面。
 
-![4](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/4.png)
+![4.png](http://upload-images.jianshu.io/upload_images/3623720-ee3c89189a125813.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 这里需要选择实例类型，如果新注册的用户可以免费使用一年的t2.mirco实例，这个实例是没有GPU的，如果要使用GPU的实例，那么从上面的实例类型中选择GPU计算，便可以快速跳转到下面这里。
 
-![5](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/5.png)
+
+![5.png](http://upload-images.jianshu.io/upload_images/3623720-81cf1fa5b999752a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 这里有很多个实例，一般我们就选第一个p2.xlarge，这个实例包含一个Nvidia k40GPU，后面有8块GPU和16块GPU的版本，当然费用也更高。选择完成之后我们可以进入下一步配置实例信息。
 
-![6](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/6.png)
+
+![6.png](http://upload-images.jianshu.io/upload_images/3623720-56c4ead3a85dfbba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 这里我们只需要关注根目录的大小，也就是云端计算平台的硬盘大小，因为我们需要存放数据集，需要安装框架，所以需要大一点，新注册的用户可以免费试用30G的存储，我们可以设置为40G，一般费用比较便宜。然后点击审核和启动实例。
 
@@ -50,13 +56,17 @@
 
 接着进入到下面这个界面，我们可以点击右下角的启动来启动实例了。
 
-![7](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/7.png)
+
+![7.png](http://upload-images.jianshu.io/upload_images/3623720-094dec03bf58c6c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 
 
 接着会跳出一个对话框如下。
 
-![9](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/9.png)
+
+![9.png](http://upload-images.jianshu.io/upload_images/3623720-4a6cd6ff1321e5fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 这里需要你创建一个密钥对，因为现在aws不支持密码登录，所以需要密钥登录，你在名称那一栏取一个名字，然后点击**下载密钥对**就可以了。
 
@@ -64,29 +74,36 @@
 
 然后你就可以看到你的实例正在启动，点击下图红框的地方进入具体的实例位置。
 
-![10](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/10.png)
+
+![10.png](http://upload-images.jianshu.io/upload_images/3623720-f7bcd437c5dd904c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
 然后可以进入到下面的界面，可以看到实例正在启动，右键点击实例这一栏，然后点击连接。
 
-![11](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/11.png)
+![11.png](http://upload-images.jianshu.io/upload_images/3623720-8c7b5be786db6e50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
-接着便会出来下面的窗口，按着这个窗口的操作，如果使用windows系统，需要PuTTY连接，因为我的电脑是mac，所以这个部分没有尝试。在mac下打开终端，先进入刚才存放密钥的位置，然后输出`chmod 400 yourkey.pem`，这里我的密钥是'liao.pem'，这个命令只需要第一次连接的时候输入，后面连接就不用管了，然后通过下面的命令连到你的远程linux服务器。![12](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/12.png)
+
+接着便会出来下面的窗口，按着这个窗口的操作，如果使用windows系统，需要PuTTY连接，因为我的电脑是mac，所以这个部分没有尝试。在mac下打开终端，先进入刚才存放密钥的位置，然后输出`chmod 400 yourkey.pem`，这里我的密钥是'liao.pem'，这个命令只需要第一次连接的时候输入，后面连接就不用管了，然后通过下面的命令连到你的远程linux服务器。
+
+
+![12.png](http://upload-images.jianshu.io/upload_images/3623720-1c476e3770c0eb63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 
 
 比如，这是我在终端中进行的输入，第一次连接会弹出一个问题，输入yes即可。
 
-![13](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/13.png)
+![13.png](http://upload-images.jianshu.io/upload_images/3623720-825156b98dba8b84.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
 然后我们便进入到了系统，可以看到，红框就表示连接的远程服务器。
 
-![14](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/14.png)
+![14.png](http://upload-images.jianshu.io/upload_images/3623720-8a19f59377d88055.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 
 
@@ -94,7 +111,8 @@
 
 下面简单演示一下如何在远程环境下安装anaconda，这里需要一点bash命令的基础。首先使用自己的电脑进入到[Anaconda的官网](https://www.anaconda.com/download/#linux)，然后右键点击Download，保存链接地址。
 
-![15](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/15.png)
+![15.png](http://upload-images.jianshu.io/upload_images/3623720-54ba5def9981eb27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 
 
@@ -106,7 +124,9 @@ wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
 
 后面是刚刚复制的地址，然后输入回车，就开始下载了，下载完成之后是一个后缀为.sh的文件，输入`sudo sh 文件名.sh`就可以开始安装了。
 
-![16](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/16.png)
+
+![16.png](http://upload-images.jianshu.io/upload_images/3623720-709e1ab46eb204a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 
 
@@ -172,6 +192,7 @@ echo "export LD_LIBRARY_PATH=\${LD_LIBRARY_PATH}:/usr/local/cuda-8.0/lib64" >>.b
 ```
 
 
+
 ### 运行Jupyter notebook
 
 接下来在远程终端运行Jupyter notebook。
@@ -206,11 +227,16 @@ ssh -N -f -L localhost:8889:localhost:8888 ubuntu@your-ip.amazonaws.com
 
 因为云服务按时间计费，通常我们不用时需要把样例关掉，到下次要用时再开。
 
-![17](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/17.png)
+
+
+![17.png](http://upload-images.jianshu.io/upload_images/3623720-6e4fb6cb2d39d66f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 如果是停掉（Stop)，下次可以直接继续用，但硬盘空间会计费。如果是终结(Termination)，我们一般会先把操作系统做镜像，下次开始时直接使用镜像（AMI）（上面的教程使用了Ubuntu 16.06 AMI）就行了，不需要再把上面流程走一次。
 
-![18](/Users/sherlockliao/Documents/code-of-learn-deep-learning-with-pytorch/aws/18.png)
+
+![18.png](http://upload-images.jianshu.io/upload_images/3623720-e4aac81d991e1a28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 
 
