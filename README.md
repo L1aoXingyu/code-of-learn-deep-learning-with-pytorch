@@ -25,9 +25,9 @@ Learn Deep Learning with PyTorch
     - 模型保存和读取
 
 - Chapter 3: PyTorch高级
-    - tensorboard可视化
+    - tensorboard可视化
     - 优化器
-    - 自定义loss和非标准层
+    - 自定义loss和非标准层
     - 数据并行和多GPU
     - PyTorch的分布式应用
     - 使用ONNX转化为Caffe2模型
@@ -59,23 +59,23 @@ Learn Deep Learning with PyTorch
     - 语义分割: 通过卷积实现像素级别的分类
     - 使用卷积网络进行目标检测
     - 使用triplet loss进行人脸识别
-    - Neural Transfer: 通过卷积网络实现风格迁移
+    - Neural Transfer: 通过卷积网络实现风格迁移
     - Deep Dream: 探索卷积网络眼中的世界
 
 - Chapter 8: 自然语言处理
-    - char rnn实现文本生成
+    - char rnn实现文本生成
     - 联合卷积网络实现图片字幕
     - 使用rnn进行情感分析
     - seq2seq实现机器翻译
-    - cnn+rnn+attention实现文本识别
+    - cnn+rnn+attention实现文本识别
     - Tree-lstm实现语义相关性分析
 
 ### part3: 高级内容
-- Chapter 9: 生成对抗网络
+- Chapter 9: 生成对抗网络
     - 自动编码器
     - 变分自动编码器
     - 生成对抗网络的介绍
-    - 深度卷积对抗网络(DCGANs)
+    - 深度卷积对抗网络(DCGANs)
     - Wasserstein-GANs
     - 条件生成对抗网络(Conditional
      GANs)
