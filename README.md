@@ -17,9 +17,10 @@ Learn Deep Learning with PyTorch
 ## 课程目录
 ### part1: 深度学习基础
 - Chapter 2: PyTorch基础
-    - PyTorch和NumPy
+    - [Tensor和Variable](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter2_PyTorch-Basics/Tensor-and-Variable.ipynb)
     - 自动求导机制
     - 数据的读取
+    - autograd.function的介绍
     - Module和Sequential
     - 自定义参数的初始化
     - 模型保存和读取
