@@ -19,26 +19,20 @@ Learn Deep Learning with PyTorch
 - Chapter 2: PyTorch基础
     - [Tensor和Variable](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter2_PyTorch-Basics/Tensor-and-Variable.ipynb)
     - [自动求导机制](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter2_PyTorch-Basics/autograd.ipynb)
+    - [动态图与静态图](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter2_PyTorch-Basics/dynamic-graph.ipynb)
     - 数据的读取
-    - autograd.function的介绍
+ 
+
+- Chapter 3: 神经网络
+    - [线性模型与梯度下降](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/linear-regression-gradient-descend.ipynb)
+    - Logistic 回归与优化器
     - Module和Sequential
-    - 自定义参数的初始化
     - 模型保存和读取
-
-- Chapter 3: PyTorch高级
-    - tensorboard可视化
-    - 优化器
-    - 自定义loss和非标准层
-    - 数据并行和多GPU
-    - PyTorch的分布式应用
-    - 使用ONNX转化为Caffe2模型
-
-- Chapter 4: 多层感知器
-    - 线性模型
-    - Logistic 回归
+    - 自定义参数的初始化
+    - 优化算法
     - 多层神经网络
 
-- Chapter 5: 卷积神经网络
+- Chapter 4: 卷积神经网络
     - 从0开始手动搭建卷积网络
     - 批标准化
     - 使用重复元素的深度网络，VGG
@@ -46,18 +40,26 @@ Learn Deep Learning with PyTorch
     - 深度残差网络，ResNet
     - 稠密连接的卷积网络，DenseNet
 
-- Chapter 6: 循环神经网络
+- Chapter 5: 循环神经网络
     - LSTM和GRU
     - 使用RNN进行时间序列分析
     - 使用RNN进行图像分类
     - Word Embedding和N-Gram模型
     - Seq-LSTM做词性预测
 
+- Chapter 6: PyTorch高级
+    - tensorboard可视化
+    - 各种优化算法
+    - autograd.function的介绍
+    - 数据并行和多GPU
+    - PyTorch的分布式应用
+    - 使用ONNX转化为Caffe2模型
+
 ### part2: 深度学习的应用
 - Chapter 7: 计算机视觉
     - 图像增强的方法
     - Fine-tuning: 通过微调进行迁移学习
-    - 语义分割: 通过卷积实现像素级别的分类
+    - 语义分割: 通过FCN实现像素级别的分类
     - 使用卷积网络进行目标检测
     - 使用triplet loss进行人脸识别
     - Neural Transfer: 通过卷积网络实现风格迁移
