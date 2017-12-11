@@ -25,7 +25,7 @@ Learn Deep Learning with PyTorch
 
 - Chapter 3: 神经网络
     - [线性模型与梯度下降](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/linear-regression-gradient-descend.ipynb)
-    - Logistic 回归与优化器
+    - [Logistic 回归与优化器](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/logistic-regression/logistic-regression.ipynb)
     - Module和Sequential
     - 模型保存和读取
     - 自定义参数的初始化
