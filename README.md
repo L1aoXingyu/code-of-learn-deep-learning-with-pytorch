@@ -27,11 +27,11 @@ Learn Deep Learning with PyTorch
     - [线性模型与梯度下降](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/linear-regression-gradient-descend.ipynb)
     - [Logistic 回归与优化器](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/logistic-regression/logistic-regression.ipynb)
     - [多层神经网络，Sequential 和 Module](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/nn-sequential-module.ipynb)
-    - 参数初始化方法
+    - [参数初始化方法](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/param_initialize.ipynb)
     - 优化算法
 
 - Chapter 4: 卷积神经网络
-    - 卷积网络介绍以及 PyTorch 中的卷积模块
+    - PyTorch 中的卷积模块
     - 使用重复元素的深度网络，VGG
     - 更加丰富化结构的网络，GoogLeNet
     - 深度残差网络，ResNet
@@ -41,7 +41,7 @@ Learn Deep Learning with PyTorch
     - Fine-tuning: 通过微调进行迁移学习
 
 - Chapter 5: 循环神经网络
-    - LSTM和GRU
+    - LSTM 和 GRU
     - 使用RNN进行时间序列分析
     - 使用RNN进行图像分类
     - Word Embedding和N-Gram模型

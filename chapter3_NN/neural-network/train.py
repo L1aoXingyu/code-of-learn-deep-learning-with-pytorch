@@ -78,7 +78,7 @@ for data in test_loader:
         img = Variable(img, volatile=True).cuda()
         label = Variable(label, volatile=True).cuda()
     else:
-        img = Variabel(img, volatile=True)
+        img = Variable(img, volatile=True)
         label = Variable(label, volatile=True)
     out = model(img)
     loss = criterion(out, label)
