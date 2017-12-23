@@ -31,11 +31,14 @@ Learn Deep Learning with PyTorch
  
 - Chapter 4: 卷积神经网络
     - [PyTorch 中的卷积模块](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/basic_conv.ipynb)
+    - [批标准化，batch normalization](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/batch-normalization.ipynb))
     - [使用重复元素的深度网络，VGG](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_CNN/vgg.ipynb)
     - [更加丰富化结构的网络，GoogLeNet](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_CNN/googlenet.ipynb)
     - [深度残差网络，ResNet](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_CNN/resnet.ipynb)
     - [稠密连接的卷积网络，DenseNet](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_CNN/densenet.ipynb)
-    - 更好的训练卷积网络：数据增强、批标准化、dropout、正则化方法以及学习率衰减
+    - 更好的训练卷积网络
+        - [数据增强](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_CNN/data-augumentation.ipynb)
+        - dropout、正则化方法和学习率衰减]()
 
 - Chapter 5: 循环神经网络
     - LSTM 和 GRU
@@ -53,12 +56,12 @@ Learn Deep Learning with PyTorch
 - Chapter 7: PyTorch高级
     - tensorboard 可视化
     - 优化算法
-        - [SGD](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/sgd.ipynb)
-        - [动量法](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/momentum.ipynb)
-        - [Adagrad](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/adagrad.ipynb)
-        - [RMSProp](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/rmsprop.ipynb)
-        - [Adadelta](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/adadelta.ipynb)
-        - [Adam](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/adam.ipynb)
+        - [SGD](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/sgd.ipynb)
+        - [动量法](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/momentum.ipynb)
+        - [Adagrad](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/adagrad.ipynb)
+        - [RMSProp](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/rmsprop.ipynb)
+        - [Adadelta](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/adadelta.ipynb)
+        - [Adam](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/adam.ipynb)
     - 灵活的数据读取介绍
     - autograd.function 的介绍
     - 数据并行和多 GPU
