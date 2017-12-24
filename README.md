@@ -55,7 +55,7 @@ Learn Deep Learning with PyTorch
     - 深度卷积对抗网络(DCGANs)
 
 - Chapter 7: PyTorch高级
-    - [tensorboard 可视化]()
+    - [tensorboard 可视化](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/tensorboard.ipynb)
     - 优化算法
         - [SGD](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/sgd.ipynb)
         - [动量法](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/momentum.ipynb)
@@ -72,7 +72,7 @@ Learn Deep Learning with PyTorch
 
 ### part2: 深度学习的应用
 - Chapter 8: 计算机视觉
-    - Fine-tuning: 通过微调进行迁移学习
+    - [Fine-tuning: 通过微调进行迁移学习]()
     - 语义分割: 通过 FCN 实现像素级别的分类
     - Neural Transfer: 通过卷积网络实现风格迁移
     - Deep Dream: 探索卷积网络眼中的世界
