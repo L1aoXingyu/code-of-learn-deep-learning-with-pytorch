@@ -32,14 +32,14 @@ Learn Deep Learning with PyTorch
 - Chapter 4: 卷积神经网络
     - [PyTorch 中的卷积模块](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/basic_conv.ipynb)
     - [批标准化，batch normalization](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/batch-normalization.ipynb)
-    - [使用重复元素的深度网络，VGG](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_CNN/vgg.ipynb)
-    - [更加丰富化结构的网络，GoogLeNet](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_CNN/googlenet.ipynb)
-    - [深度残差网络，ResNet](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_CNN/resnet.ipynb)
-    - [稠密连接的卷积网络，DenseNet](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_CNN/densenet.ipynb)
+    - [使用重复元素的深度网络，VGG](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/vgg.ipynb)
+    - [更加丰富化结构的网络，GoogLeNet](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/googlenet.ipynb)
+    - [深度残差网络，ResNet](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/resnet.ipynb)
+    - [稠密连接的卷积网络，DenseNet](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/densenet.ipynb)
     - 更好的训练卷积网络
-        - [数据增强](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_CNN/data-augumentation.ipynb)
-        - [正则化](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_CNN/regularization.ipynb)
-        - [学习率衰减](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_CNN/lr-decay.ipynb)
+        - [数据增强](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/data-augumentation.ipynb)
+        - [正则化](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/regularization.ipynb)
+        - [学习率衰减](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/lr-decay.ipynb)
 
 - Chapter 5: 循环神经网络
     - LSTM 和 GRU
@@ -63,7 +63,7 @@ Learn Deep Learning with PyTorch
         - [RMSProp](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/rmsprop.ipynb)
         - [Adadelta](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/adadelta.ipynb)
         - [Adam](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/adam.ipynb)
-    - [灵活的数据读取介绍]()
+    - [灵活的数据读取介绍](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/data-io.ipynb)
     - autograd.function 的介绍
     - 数据并行和多 GPU
     - PyTorch 的分布式应用
@@ -72,7 +72,7 @@ Learn Deep Learning with PyTorch
 
 ### part2: 深度学习的应用
 - Chapter 8: 计算机视觉
-    - [Fine-tuning: 通过微调进行迁移学习]()
+    - [Fine-tuning: 通过微调进行迁移学习](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter7_Computer-Vision/fine-tune.ipynb)
     - 语义分割: 通过 FCN 实现像素级别的分类
     - Neural Transfer: 通过卷积网络实现风格迁移
     - Deep Dream: 探索卷积网络眼中的世界
