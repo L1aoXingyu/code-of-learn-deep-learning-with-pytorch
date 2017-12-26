@@ -13,7 +13,7 @@ Learn Deep Learning with PyTorch
 书中已经详细给出了如何基于Anaconda配置python环境，以及PyTorch的安装，如果你使用自己的电脑，并且有Nvidia的显卡，那么你可以愉快地进入深度学习的世界了，如果你没有Nvidia的显卡，那么我们需要一个云计算的平台来帮助我们学习深度学习之旅。[如何配置aws计算平台](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/aws.md)
 
 
-**以下的课程目录和书中目录有出入，因为内容正在不断更新，所有的内容更新完成会更迭到书的第二版中！**
+**以下的课程目录和书中目录有出入，因为内容正在更新到第二版，第二版即将上线！！**
 ## 课程目录
 ### part1: 深度学习基础
 - Chapter 2: PyTorch基础
@@ -28,6 +28,14 @@ Learn Deep Learning with PyTorch
     - [多层神经网络，Sequential 和 Module](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/nn-sequential-module.ipynb)
     - [深度神经网络](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/deep-nn.ipynb)
     - [参数初始化方法](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/param_initialize.ipynb)
+
+    - 优化算法
+        - [SGD](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/sgd.ipynb)
+        - [动量法](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/momentum.ipynb)
+        - [Adagrad](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/adagrad.ipynb)
+        - [RMSProp](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/rmsprop.ipynb)
+        - [Adadelta](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/adadelta.ipynb)
+        - [Adam](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/adam.ipynb)
  
 - Chapter 4: 卷积神经网络
     - [PyTorch 中的卷积模块](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/basic_conv.ipynb)
@@ -42,11 +50,13 @@ Learn Deep Learning with PyTorch
         - [学习率衰减](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/lr-decay.ipynb)
 
 - Chapter 5: 循环神经网络
-    - LSTM 和 GRU
-    - 使用RNN进行时间序列分析
-    - 使用RNN进行图像分类
-    - Word Embedding和N-Gram模型
-    - Seq-LSTM做词性预测
+    - [循环神经网络模块：LSTM 和 GRU](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter5_RNN/pytorch-rnn.ipynb)
+    - [使用 RNN 进行图像分类](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter5_RNN/rnn-for-image.ipynb)
+    - 使用 RNN 进行时间序列分析
+    - 自然语言处理的应用：
+        - Word Embedding 
+        - N-Gram 模型
+        - Seq-LSTM 做词性预测
 
 - Chapter 6: 生成对抗网络
     - 自动编码器
@@ -54,16 +64,16 @@ Learn Deep Learning with PyTorch
     - 生成对抗网络的介绍
     - 深度卷积对抗网络(DCGANs)
 
-- Chapter 7: PyTorch高级
-    - [tensorboard 可视化](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/tensorboard.ipynb)
-    - 优化算法
-        - [SGD](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/sgd.ipynb)
-        - [动量法](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/momentum.ipynb)
-        - [Adagrad](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/adagrad.ipynb)
-        - [RMSProp](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/rmsprop.ipynb)
-        - [Adadelta](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/adadelta.ipynb)
-        - [Adam](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/optimizer/adam.ipynb)
-    - [灵活的数据读取介绍](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_PyTorch-Advances/data-io.ipynb)
+- Chapter 7: 深度增强学习
+    - 深度增强学习的介绍
+    - Policy gradient
+    - Actor-critic gradient
+    - Deep Q-networks
+
+- Chapter 8: PyTorch高级
+    - [tensorboard 可视化](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter8_PyTorch-Advances/tensorboard.ipynb)
+
+   - [灵活的数据读取介绍](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter8_PyTorch-Advances/data-io.ipynb)
     - autograd.function 的介绍
     - 数据并行和多 GPU
     - PyTorch 的分布式应用
@@ -71,13 +81,13 @@ Learn Deep Learning with PyTorch
     - PyTorch 写 C 扩展
 
 ### part2: 深度学习的应用
-- Chapter 8: 计算机视觉
-    - [Fine-tuning: 通过微调进行迁移学习](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter7_Computer-Vision/fine-tune.ipynb)
+- Chapter 9: 计算机视觉
+    - [Fine-tuning: 通过微调进行迁移学习](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter9_Computer-Vision/fine-tune.ipynb)
     - 语义分割: 通过 FCN 实现像素级别的分类
     - Neural Transfer: 通过卷积网络实现风格迁移
     - Deep Dream: 探索卷积网络眼中的世界
 
-- Chapter 9: 自然语言处理
+- Chapter 10: 自然语言处理
     - char rnn 实现文本生成
     - Image Caption: 实现图片字幕生成
     - seq2seq 实现机器翻译
