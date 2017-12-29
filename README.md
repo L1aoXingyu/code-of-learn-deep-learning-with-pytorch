@@ -52,11 +52,11 @@ Learn Deep Learning with PyTorch
 - Chapter 5: 循环神经网络
     - [循环神经网络模块：LSTM 和 GRU](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter5_RNN/pytorch-rnn.ipynb)
     - [使用 RNN 进行图像分类](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter5_RNN/rnn-for-image.ipynb)
-    - 使用 RNN 进行时间序列分析
+    - [使用 RNN 进行时间序列分析](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter5_RNN/time-series/lstm-time-series.ipynb)
     - 自然语言处理的应用：
-        - Word Embedding 
-        - N-Gram 模型
-        - Seq-LSTM 做词性预测
+        - [Word Embedding](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter5_RNN/nlp/word-embedding.ipynb)
+        - [N-Gram 模型](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter5_RNN/nlp/n-gram.ipynb)
+        - [Seq-LSTM 做词性预测](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter5_RNN/nlp/seq-lstm.ipynb)
 
 - Chapter 6: 生成对抗网络
     - 自动编码器
