@@ -58,10 +58,10 @@ Learn Deep Learning with PyTorch
         - [Seq-LSTM 做词性预测](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter5_RNN/nlp/seq-lstm.ipynb)
 
 - Chapter 6: 生成对抗网络
-    - [自动编码器](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_GAN/autoencoder/autoencoder.ipynb)
-    - 变分自动编码器
-    - 生成对抗网络的介绍
-    - 深度卷积对抗网络(DCGANs)
+    - [自动编码器](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_GAN/autoencoder.ipynb)
+    - [变分自动编码器](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_GAN/vae.ipynb)
+    - 生成对抗网络
+    - 深度卷积对抗网络(DCGANs)生成人脸
 
 - Chapter 7: 深度增强学习
     - 深度增强学习的介绍
@@ -83,6 +83,7 @@ Learn Deep Learning with PyTorch
 - Chapter 9: 计算机视觉
     - [Fine-tuning: 通过微调进行迁移学习](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter9_Computer-Vision/fine_tune/fine-tune.ipynb)
     - [语义分割: 通过 FCN 实现像素级别的分类](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter9_Computer-Vision/segmentation/fcn.ipynb)
+    - Pixel to Pixel 生成对抗网络
     - Neural Transfer: 通过卷积网络实现风格迁移
     - Deep Dream: 探索卷积网络眼中的世界
 
