@@ -60,8 +60,8 @@ Learn Deep Learning with PyTorch
 - Chapter 6: 生成对抗网络
     - [自动编码器](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_GAN/autoencoder.ipynb)
     - [变分自动编码器](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_GAN/vae.ipynb)
-    - 生成对抗网络
-    - 深度卷积对抗网络(DCGANs)生成人脸
+    - [生成对抗网络](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_GAN/gan.ipynb)
+    - 深度卷积对抗网络 (DCGANs) 生成人脸
 
 - Chapter 7: 深度增强学习
     - 深度增强学习的介绍
@@ -91,7 +91,7 @@ Learn Deep Learning with PyTorch
     - char rnn 实现文本生成
     - Image Caption: 实现图片字幕生成
     - seq2seq 实现机器翻译
-    - cnn+rnn+attention 实现文本识别
+    - cnn + rnn + attention 实现文本识别
 
 ## 一些别的资源
 
