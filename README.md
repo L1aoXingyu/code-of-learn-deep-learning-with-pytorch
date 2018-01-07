@@ -63,10 +63,9 @@ Learn Deep Learning with PyTorch
     - [生成对抗网络](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_GAN/gan.ipynb)
     - 深度卷积对抗网络 (DCGANs) 生成人脸
 
-- Chapter 7: 深度增强学习
-    - 深度增强学习的介绍
-    - Policy gradient
-    - Actor-critic gradient
+- Chapter 7: 深度强化学习
+    - [Q Learning](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter7_RL/q-learning-intro.ipynb)
+    - Open AI gym
     - Deep Q-networks
 
 - Chapter 8: PyTorch高级
