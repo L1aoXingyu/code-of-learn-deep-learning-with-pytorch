@@ -66,17 +66,15 @@ Learn Deep Learning with PyTorch
 - Chapter 7: 深度强化学习
     - [Q Learning](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter7_RL/q-learning-intro.ipynb)
     - Open AI gym
-    - Deep Q-networks
+    - [Deep Q-networks](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter7_RL/dqn.ipynb)
 
 - Chapter 8: PyTorch高级
     - [tensorboard 可视化](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter8_PyTorch-Advances/tensorboard.ipynb)
-
    - [灵活的数据读取介绍](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter8_PyTorch-Advances/data-io.ipynb)
     - autograd.function 的介绍
     - 数据并行和多 GPU
-    - PyTorch 的分布式应用
     - 使用 ONNX 转化为 Caffe2 模型
-    - PyTorch 写 C 扩展
+    - 打造属于自己的 PyTorch 的使用习惯
 
 ### part2: 深度学习的应用
 - Chapter 9: 计算机视觉
