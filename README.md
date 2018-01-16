@@ -65,7 +65,7 @@ Learn Deep Learning with PyTorch
 
 - Chapter 7: 深度强化学习
     - [Q Learning](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter7_RL/q-learning-intro.ipynb)
-    - Open AI gym
+    - [Open AI gym](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter7_RL/open_ai_gym.ipynb)
     - [Deep Q-networks](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter7_RL/dqn.ipynb)
 
 - Chapter 8: PyTorch高级
