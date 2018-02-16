@@ -74,8 +74,9 @@ class FineTuneTrainer(Trainer):
         self.metric_meter['loss'] = meter.AverageValueMeter()
         self.metric_meter['acc'] = meter.AverageValueMeter()
 
-    def train(self, train_data):
+    def train(self, kwargs):
         self.model.train()
+        train_data = kwargs['train_data']
         for data in tqdm(train_data):
             img, label = data
             if opt.use_gpu:
@@ -99,18 +100,19 @@ class FineTuneTrainer(Trainer):
             self.metric_meter['acc'].add(acc.data[0])
 
             # Update to tensorboard.
-            # if (self.n_iter + 1) % opt.plot_freq == 0:
-            #     self.writer.add_scalars('loss', {'train': self.metric_meter['loss'].value()[0]}, self.n_plot)
-            #     self.writer.add_scalars('acc', {'train': self.metric_meter['acc'].value()[0], self.n_plot})
-            #     self.n_plot += 1
+            if (self.n_iter + 1) % opt.plot_freq == 0:
+                self.writer.add_scalars('loss', {'train': self.metric_meter['loss'].value()[0]}, self.n_plot)
+                self.writer.add_scalars('acc', {'train': self.metric_meter['acc'].value()[0]}, self.n_plot)
+                self.n_plot += 1
             self.n_iter += 1
 
         # Log the train metric dict to print result.
         self.metric_log['train loss'] = self.metric_meter['loss'].value()[0]
         self.metric_log['train acc'] = self.metric_meter['acc'].value()[0]
 
-    def test(self, test_data):
+    def test(self, kwargs):
         self.model.eval()
+        test_data = kwargs['test_data']
         for data in tqdm(test_data):
             img, label = data
             if opt.use_gpu:
@@ -127,9 +129,9 @@ class FineTuneTrainer(Trainer):
             self.metric_meter['acc'].add(acc.data[0])
 
         # Update to tensorboard.
-        # self.writer.add_scalars('loss', {'test': self.metric_meter['loss'].value()[0]}, self.n_plot)
-        # self.writer.add_scalars('acc', {'test': self.metric_meter['acc'].value()[0]}, self.n_plot)
-        # self.n_plot += 1
+        self.writer.add_scalars('loss', {'test': self.metric_meter['loss'].value()[0]}, self.n_plot)
+        self.writer.add_scalars('acc', {'test': self.metric_meter['acc'].value()[0]}, self.n_plot)
+        self.n_plot += 1
 
         # Log the test metric to dict.
         self.metric_log['test loss'] = self.metric_meter['loss'].value()[0]
@@ -148,7 +150,7 @@ def train(**kwargs):
     test_data = get_test_data()
 
     fine_tune_trainer = FineTuneTrainer()
-    fine_tune_trainer.fit(train_data, test_data)
+    fine_tune_trainer.fit(train_data=train_data, test_data=test_data)
 
 
 if __name__ == '__main__':
