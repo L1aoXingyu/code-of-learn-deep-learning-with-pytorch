@@ -18,7 +18,7 @@ from tqdm import tqdm
 
 import models
 from config import opt
-from data import VocSegDataset, img_transforms, COLORMAP
+from data import VocSegDataset, img_transforms, COLORMAP, inverse_normalization
 
 warnings.filterwarnings('ignore')
 
@@ -103,9 +103,11 @@ class FcnTrainer(Trainer):
 
                 # Show segmentation images.
                 # Get prediction segmentation and ground truth segmentation.
+                origin_image = inverse_normalization(imgs[0].cpu().data)
                 pred_seg = cm[pred_labels[0]]
                 gt_seg = cm[true_labels[0]]
 
+                self.writer.add_image('train ori_img', origin_image, self.n_plot)
                 self.writer.add_image('train gt', gt_seg, self.n_plot)
                 self.writer.add_image('train pred', pred_seg, self.n_plot)
                 self.n_plot += 1
@@ -148,8 +150,10 @@ class FcnTrainer(Trainer):
         self.writer.add_scalars('acc', {'test': self.metric_meter['acc'].value()[0]}, self.n_plot)
         self.writer.add_scalars('iou', {'test': self.metric_meter['iou'].value()[0]}, self.n_plot)
 
+        origin_img = inverse_normalization(imgs[0].cpu().data)
         pred_seg = cm[pred_labels[0]]
         gt_seg = cm[true_labels[0]]
+        self.writer.add_image('test ori_img', origin_img, self.n_plot)
         self.writer.add_image('test gt', gt_seg, self.n_plot)
         self.writer.add_image('test pred', pred_seg, self.n_plot)
 

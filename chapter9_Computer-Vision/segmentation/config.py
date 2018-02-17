@@ -22,7 +22,7 @@ class DefaultConfig(object):
     save_best = True  # If save best test metric model.
 
     # Visualization parameters.
-    vis_dir = './vis/'
+    # vis_dir = './vis/'
     plot_freq = 30  # plot in tensorboard every N iterations
 
     # Model hyperparameters.

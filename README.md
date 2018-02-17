@@ -20,7 +20,7 @@ Learn Deep Learning with PyTorch
     - [Tensor和Variable](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter2_PyTorch-Basics/Tensor-and-Variable.ipynb)    
     - [自动求导机制](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter2_PyTorch-Basics/autograd.ipynb)
     - [动态图与静态图](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter2_PyTorch-Basics/dynamic-graph.ipynb)
- 
+
 
 - Chapter 3: 神经网络
     - [线性模型与梯度下降](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/linear-regression-gradient-descend.ipynb)
@@ -35,7 +35,6 @@ Learn Deep Learning with PyTorch
         - [RMSProp](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/rmsprop.ipynb)
         - [Adadelta](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/adadelta.ipynb)
         - [Adam](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/adam.ipynb)
- 
 - Chapter 4: 卷积神经网络
     - [PyTorch 中的卷积模块](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/basic_conv.ipynb)
     - [批标准化，batch normalization](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/batch-normalization.ipynb)
@@ -47,7 +46,6 @@ Learn Deep Learning with PyTorch
         - [数据增强](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/data-augumentation.ipynb)
         - [正则化](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/regularization.ipynb)
         - [学习率衰减](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter4_CNN/lr-decay.ipynb)
-
 - Chapter 5: 循环神经网络
     - [循环神经网络模块：LSTM 和 GRU](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter5_RNN/pytorch-rnn.ipynb)
     - [使用 RNN 进行图像分类](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter5_RNN/rnn-for-image.ipynb)
@@ -56,24 +54,22 @@ Learn Deep Learning with PyTorch
         - [Word Embedding](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter5_RNN/nlp/word-embedding.ipynb)
         - [N-Gram 模型](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter5_RNN/nlp/n-gram.ipynb)
         - [Seq-LSTM 做词性预测](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter5_RNN/nlp/seq-lstm.ipynb)
-
 - Chapter 6: 生成对抗网络
     - [自动编码器](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_GAN/autoencoder.ipynb)
     - [变分自动编码器](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_GAN/vae.ipynb)
     - [生成对抗网络](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter6_GAN/gan.ipynb)
     - 深度卷积对抗网络 (DCGANs) 生成人脸
-
 - Chapter 7: 深度强化学习
     - [Q Learning](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter7_RL/q-learning-intro.ipynb)
     - [Open AI gym](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter7_RL/open_ai_gym.ipynb)
     - [Deep Q-networks](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter7_RL/dqn.ipynb)
-
 - Chapter 8: PyTorch高级
     - [tensorboard 可视化](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter8_PyTorch-Advances/tensorboard.ipynb)
    - [灵活的数据读取介绍](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter8_PyTorch-Advances/data-io.ipynb)
     - autograd.function 的介绍
     - 数据并行和多 GPU
     - 使用 ONNX 转化为 Caffe2 模型
+    - 如何部署训练好的神经网络
     - 打造属于自己的 PyTorch 的使用习惯
 
 ### part2: 深度学习的应用
