@@ -75,7 +75,7 @@ Learn Deep Learning with PyTorch
 ### part2: 深度学习的应用
 - Chapter 9: 计算机视觉
     - [Fine-tuning: 通过微调进行迁移学习](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter9_Computer-Vision/fine_tune/fine-tune.ipynb)
-    - [语义分割: 通过 FCN 实现像素级别的分类](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter9_Computer-Vision/segmentation/fcn.ipynb)
+    - [语义分割: 通过 FCN 实现像素级别的分类](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/tree/master/chapter9_Computer-Vision/segmentation)
     - Pixel to Pixel 生成对抗网络
     - Neural Transfer: 通过卷积网络实现风格迁移
     - Deep Dream: 探索卷积网络眼中的世界
