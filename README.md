@@ -81,7 +81,7 @@ Learn Deep Learning with PyTorch
     - Deep Dream: 探索卷积网络眼中的世界
 
 - Chapter 10: 自然语言处理
-    - [Char RNN 实现文本生成](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter10_Natural-Language-Process/Char-RNN/) 
+    - [Char RNN 实现文本生成](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter10_Natural-Language-Process/char_rnn/) 
     - Image Caption: 实现图片字幕生成
     - seq2seq 实现机器翻译
     - cnn + rnn + attention 实现文本识别
