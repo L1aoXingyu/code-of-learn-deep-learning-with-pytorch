@@ -38,12 +38,14 @@ def test_tf(img):
 
 def get_train_data():
     train_set = ImageFolder(opt.train_data_path, train_tf)
-    return DataLoader(train_set, opt.batch_size, True, num_workers=opt.num_workers)
+    return DataLoader(
+        train_set, opt.batch_size, True, num_workers=opt.num_workers)
 
 
 def get_test_data():
     test_set = ImageFolder(opt.test_data_path, test_tf)
-    return DataLoader(test_set, opt.batch_size, True, num_workers=opt.num_workers)
+    return DataLoader(
+        test_set, opt.batch_size, True, num_workers=opt.num_workers)
 
 
 def get_model():
@@ -59,8 +61,11 @@ def get_loss(score, label):
 
 
 def get_optimizer(model):
-    optimizer = torch.optim.SGD(model.parameters(), lr=opt.lr, momentum=opt.momentum,
-                                weight_decay=opt.weight_decay)
+    optimizer = torch.optim.SGD(
+        model.parameters(),
+        lr=opt.lr,
+        momentum=opt.momentum,
+        weight_decay=opt.weight_decay)
     return ScheduledOptim(optimizer)
 
 
@@ -75,6 +80,7 @@ class FineTuneTrainer(Trainer):
         self.metric_meter['acc'] = meter.AverageValueMeter()
 
     def train(self, kwargs):
+        self.reset_meter()
         self.model.train()
         train_data = kwargs['train_data']
         for data in tqdm(train_data):
@@ -101,8 +107,12 @@ class FineTuneTrainer(Trainer):
 
             # Update to tensorboard.
             if (self.n_iter + 1) % opt.plot_freq == 0:
-                self.writer.add_scalars('loss', {'train': self.metric_meter['loss'].value()[0]}, self.n_plot)
-                self.writer.add_scalars('acc', {'train': self.metric_meter['acc'].value()[0]}, self.n_plot)
+                self.writer.add_scalars(
+                    'loss', {'train': self.metric_meter['loss'].value()[0]},
+                    self.n_plot)
+                self.writer.add_scalars(
+                    'acc', {'train': self.metric_meter['acc'].value()[0]},
+                    self.n_plot)
                 self.n_plot += 1
             self.n_iter += 1
 
@@ -111,6 +121,7 @@ class FineTuneTrainer(Trainer):
         self.metric_log['train acc'] = self.metric_meter['acc'].value()[0]
 
     def test(self, kwargs):
+        self.reset_meter()
         self.model.eval()
         test_data = kwargs['test_data']
         for data in tqdm(test_data):
@@ -129,8 +140,11 @@ class FineTuneTrainer(Trainer):
             self.metric_meter['acc'].add(acc.data[0])
 
         # Update to tensorboard.
-        self.writer.add_scalars('loss', {'test': self.metric_meter['loss'].value()[0]}, self.n_plot)
-        self.writer.add_scalars('acc', {'test': self.metric_meter['acc'].value()[0]}, self.n_plot)
+        self.writer.add_scalars('loss',
+                                {'test': self.metric_meter['loss'].value()[0]},
+                                self.n_plot)
+        self.writer.add_scalars(
+            'acc', {'test': self.metric_meter['acc'].value()[0]}, self.n_plot)
         self.n_plot += 1
 
         # Log the test metric to dict.

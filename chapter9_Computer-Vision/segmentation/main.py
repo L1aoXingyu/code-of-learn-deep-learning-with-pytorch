@@ -26,8 +26,10 @@ cm = np.array(COLORMAP, dtype=np.uint8)
 
 
 def get_data(is_train):
-    voc_data = VocSegDataset(opt.voc_root, is_train, opt.crop_size, img_transforms)
-    return DataLoader(voc_data, opt.batch_size, True, num_workers=opt.num_workers)
+    voc_data = VocSegDataset(opt.voc_root, is_train, opt.crop_size,
+                             img_transforms)
+    return DataLoader(
+        voc_data, opt.batch_size, True, num_workers=opt.num_workers)
 
 
 def get_model(num_classes):
@@ -38,7 +40,8 @@ def get_model(num_classes):
 
 
 def get_optimizer(model):
-    optimizer = torch.optim.SGD(model.parameters(), lr=opt.lr, weight_decay=opt.weight_decay)
+    optimizer = torch.optim.SGD(
+        model.parameters(), lr=opt.lr, weight_decay=opt.weight_decay)
     return ScheduledOptim(optimizer)
 
 
@@ -64,6 +67,7 @@ class FcnTrainer(Trainer):
             self.metric_meter[m] = meter.AverageValueMeter()
 
     def train(self, kwargs):
+        self.reset_meter()
         self.model.train()
         train_data = kwargs['train_data']
         for data in tqdm(train_data):
@@ -97,9 +101,15 @@ class FcnTrainer(Trainer):
 
             if (self.n_iter + 1) % opt.plot_freq == 0:
                 # Plot metrics curve in tensorboard.
-                self.writer.add_scalars('loss', {'train': self.metric_meter['loss'].value()[0]}, self.n_plot)
-                self.writer.add_scalars('acc', {'train': self.metric_meter['acc'].value()[0]}, self.n_plot)
-                self.writer.add_scalars('iou', {'train': self.metric_meter['iou'].value()[0]}, self.n_plot)
+                self.writer.add_scalars(
+                    'loss', {'train': self.metric_meter['loss'].value()[0]},
+                    self.n_plot)
+                self.writer.add_scalars(
+                    'acc', {'train': self.metric_meter['acc'].value()[0]},
+                    self.n_plot)
+                self.writer.add_scalars(
+                    'iou', {'train': self.metric_meter['iou'].value()[0]},
+                    self.n_plot)
 
                 # Show segmentation images.
                 # Get prediction segmentation and ground truth segmentation.
@@ -107,7 +117,8 @@ class FcnTrainer(Trainer):
                 pred_seg = cm[pred_labels[0]]
                 gt_seg = cm[true_labels[0]]
 
-                self.writer.add_image('train ori_img', origin_image, self.n_plot)
+                self.writer.add_image('train ori_img', origin_image,
+                                      self.n_plot)
                 self.writer.add_image('train gt', gt_seg, self.n_plot)
                 self.writer.add_image('train pred', pred_seg, self.n_plot)
                 self.n_plot += 1
@@ -115,10 +126,12 @@ class FcnTrainer(Trainer):
             self.n_iter += 1
 
         self.metric_log['Train Loss'] = self.metric_meter['loss'].value()[0]
-        self.metric_log['Train Mean Class Accuracy'] = self.metric_meter['acc'].value()[0]
+        self.metric_log['Train Mean Class Accuracy'] = self.metric_meter[
+            'acc'].value()[0]
         self.metric_log['Train Mean IoU'] = self.metric_meter['iou'].value()[0]
 
     def test(self, kwargs):
+        self.reset_meter()
         self.model.eval()
         test_data = kwargs['test_data']
         for data in tqdm(test_data):
@@ -146,9 +159,13 @@ class FcnTrainer(Trainer):
             self.metric_meter['iou'].add(eval_metrics['miou'])
 
         # Plot metrics curve in tensorboard.
-        self.writer.add_scalars('loss', {'test': self.metric_meter['loss'].value()[0]}, self.n_plot)
-        self.writer.add_scalars('acc', {'test': self.metric_meter['acc'].value()[0]}, self.n_plot)
-        self.writer.add_scalars('iou', {'test': self.metric_meter['iou'].value()[0]}, self.n_plot)
+        self.writer.add_scalars('loss',
+                                {'test': self.metric_meter['loss'].value()[0]},
+                                self.n_plot)
+        self.writer.add_scalars(
+            'acc', {'test': self.metric_meter['acc'].value()[0]}, self.n_plot)
+        self.writer.add_scalars(
+            'iou', {'test': self.metric_meter['iou'].value()[0]}, self.n_plot)
 
         origin_img = inverse_normalization(imgs[0].cpu().data)
         pred_seg = cm[pred_labels[0]]
@@ -160,7 +177,8 @@ class FcnTrainer(Trainer):
         self.n_plot += 1
 
         self.metric_log['Test Loss'] = self.metric_meter['loss'].value()[0]
-        self.metric_log['Test Mean Class Accuracy'] = self.metric_meter['acc'].value()[0]
+        self.metric_log['Test Mean Class Accuracy'] = self.metric_meter[
+            'acc'].value()[0]
         self.metric_log['Test Mean IoU'] = self.metric_meter['iou'].value()[0]
 
     def get_best_model(self):
@@ -178,7 +196,8 @@ def train(**kwargs):
     fcn_trainer = FcnTrainer()
     train_data = get_data(is_train=True)
     test_data = get_data(is_train=False)
-    fcn_trainer.fit(train_data=train_data, test_data=test_data, epochs=opt.max_epoch)
+    fcn_trainer.fit(
+        train_data=train_data, test_data=test_data, epochs=opt.max_epoch)
 
 
 if __name__ == '__main__':
