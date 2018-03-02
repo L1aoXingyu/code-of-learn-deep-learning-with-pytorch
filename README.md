@@ -105,3 +105,11 @@ Learn Deep Learning with PyTorch
 [PyTorchZeroToAll](https://github.com/hunkim/PyTorchZeroToAll)
 
 [Awesome-pytorch-list](https://github.com/bharathgs/Awesome-pytorch-list)
+
+
+
+## Acknowledgement
+
+本书的第二版内容其中一些部分参考了 mxnet gluon 的中文教程，[通过MXNet/Gluon来动手学习深度学习](https://zh.gluon.ai/)。
+
+Gluon 是一个和 PyTorch 非常相似的框架，非常简单、易上手，推荐大家去学习一下，也安利一下 gluon 的中文课程，全中文授课，有视频，有代码练习，可以说是最全面的中文深度学习教程。
