@@ -26,7 +26,7 @@ Learn Deep Learning with PyTorch
     - [线性模型与梯度下降](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/linear-regression-gradient-descend.ipynb)
     - [Logistic 回归与优化器](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/logistic-regression/logistic-regression.ipynb)
     - [多层神经网络，Sequential 和 Module](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/nn-sequential-module.ipynb)
-    - [深度神经网络](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/deep-nn.ipynb)
+    - [深层神经网络](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/deep-nn.ipynb)
     - [参数初始化方法](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/param_initialize.ipynb)
     - 优化算法
         - [SGD](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter3_NN/optimizer/sgd.ipynb)
@@ -75,6 +75,7 @@ Learn Deep Learning with PyTorch
 ### part2: 深度学习的应用
 - Chapter 9: 计算机视觉
     - [Fine-tuning: 通过微调进行迁移学习](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/blob/master/chapter9_Computer-Vision/fine_tune/)
+    - kaggle初体验:猫狗大战
     - [语义分割: 通过 FCN 实现像素级别的分类](https://github.com/SherlockLiao/code-of-learn-deep-learning-with-pytorch/tree/master/chapter9_Computer-Vision/segmentation)
     - Pixel to Pixel 生成对抗网络
     - Neural Transfer: 通过卷积网络实现风格迁移
